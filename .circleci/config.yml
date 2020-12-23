@@ -19,6 +19,7 @@ workflows:
       - gcp-gcr/build-and-push-image:
           context: GCP
           image: react_material_dashboard
+          tag: "$CIRCLE_BUILD_NUM"
           registry-url: eu.gcr.io
           requires:
             - test-and-build
