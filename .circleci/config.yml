@@ -18,7 +18,7 @@ workflows:
       - test-and-build
       - gcp-gcr/build-and-push-image:
           context: GCP
-          image: my-image
+          image: react_material_dashboard
           registry-url: eu.gcr.io
           requires:
             - test-and-build
