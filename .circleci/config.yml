@@ -26,6 +26,8 @@ workflows:
       - gcp-gcr/add-image-tag:
           context: GCP
           image: react_material_dashboard
+          source-tag: "$CIRCLE_BUILD_NUM"
+          target-tag: "latest"
           registry-url: eu.gcr.io
           requires:
             - test-and-build
