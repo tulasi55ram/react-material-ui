@@ -9,9 +9,8 @@ jobs:
       - image: circleci/node:13.12.0
     steps:
       - checkout 
-      - run: |
-          npm install
-          npm run test
+      - run: npm install
+      - run: npm run test 
           
         
 workflows:
