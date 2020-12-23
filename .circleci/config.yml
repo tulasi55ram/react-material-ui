@@ -11,9 +11,14 @@ jobs:
       - checkout 
       - run: npm install
       - run: npm run test 
-          
         
 workflows:
   build-project:
     jobs:
       - test-and-build
+      - gcp-gcr/build-and-push-image:
+          context: GCP
+          image: my-image
+          registry-url: eu.gcr.io
+          requires:
+            - test-and-build
