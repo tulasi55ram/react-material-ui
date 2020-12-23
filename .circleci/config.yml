@@ -30,4 +30,4 @@ workflows:
           target-tag: "latest"
           registry-url: eu.gcr.io
           requires:
-            - test-and-build
+            - gcp-gcr/build-and-push-image
