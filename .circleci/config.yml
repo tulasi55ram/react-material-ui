@@ -19,14 +19,14 @@ workflows:
       - gcp-gcr/build-and-push-image:
           context: GCP
           image: react_material_dashboard
-          tag: "$CIRCLE_BUILD_NUM"
+          tag: "$CIRCLE_WORKFLOW_ID"
           registry-url: eu.gcr.io
           requires:
             - test-and-build
       - gcp-gcr/add-image-tag:
           context: GCP
           image: react_material_dashboard
-          source-tag: "$CIRCLE_BUILD_NUM"
+          source-tag: "$CIRCLE_WORKFLOW_ID"
           target-tag: "latest"
           registry-url: eu.gcr.io
           requires:
